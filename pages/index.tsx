@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { prisma } from '../lib/prisma'
 import { useRouter } from 'next/router'
 
-const URL = "http://localhost:3000"
+const URL = "https://basic-notes.vercel.app/"
 
 interface Notes {
   notes: {
