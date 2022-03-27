@@ -28,11 +28,9 @@ const Home = ({notes}: Notes) => {
     router.replace(router.asPath)
   }
 
-  console.log(`URL: ${URL}`)
-
   async function create(data: FormData) {
     try {
-      fetch(`${URL}/api/create`, {
+      fetch(`/api/create`, {
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json'
@@ -53,7 +51,7 @@ const Home = ({notes}: Notes) => {
 
   async function deleteNote(id: string) {
     try {
-      fetch(`${URL}/api/note/${id}`, {
+      fetch(`/api/note/${id}`, {
         headers: {
           'Content-Type': 'application/json'
         },
