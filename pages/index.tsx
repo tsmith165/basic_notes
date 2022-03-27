@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { prisma } from '../lib/prisma'
 import { useRouter } from 'next/router'
 
-const URL = "https://basic-notes.vercel.app/"
+const URL = process.env.URL;
 
 interface Notes {
   notes: {
@@ -27,6 +27,8 @@ const Home = ({notes}: Notes) => {
   const refreshData = () => {
     router.replace(router.asPath)
   }
+
+  console.log(`URL: ${URL}`)
 
   async function create(data: FormData) {
     try {
